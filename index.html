@@ -270,6 +270,299 @@
             одинаковые, в противном случае подойдут row-gap и column-gap.
           </p>
         </div>
+        <!-- ========== align-content ========== -->
+        <div>
+          <h2 class="title">align-content</h2>
+          <p>
+            Управляет выравниванием всех строк в многострочном контейнера вдоль
+            поперечной оси, если есть свободное место. Аналогично тому, как
+            <b>justify-content</b> выравнивает элементы в каждой строке, это
+            свойство не действует когда есть только одна строка элементов или в
+            контейнере нет свободного места по вертикали (явно не задана высота
+            больше чем контент)
+          </p>
+          <p>
+            <br />
+            <b
+              >align-content: flex-start | flex-end | center | space-between |
+              space-around | space-evenly | stretch</b
+            >
+          </p>
+          <ul>
+            <li>
+              <b>stretch</b> - строки рамномерно растягиваются чтобы занять все
+              место, <b>это значение стоит по умолчанию</b>
+            </li>
+            <li><b>flex-start</b> - строки прижимаются к старту оси</li>
+            <li><b>flex-end</b> - строки прижимаются к концу оси</li>
+            <li><b>center</b> - строки ценрируются на оси</li>
+          </ul>
+          <p class="information">
+            Значение space-between, space-around, space-evenly работают
+            аналогично свойству justify-content, только для строк, используется
+            редко
+          </p>
+          <img src="./image/align-content.svg" class="img" />
+          <ul class="box__one six">
+            <li class="box__item">1</li>
+            <li class="box__item">2</li>
+            <li class="box__item">3</li>
+            <li class="box__item">5</li>
+            <li class="box__item">6</li>
+            <li class="box__item">7</li>
+            <li class="box__item">8</li>
+            <li class="box__item">9</li>
+            <li class="box__item">10</li>
+            <li class="box__item">11</li>
+            <li class="box__item">12</li>
+            <li class="box__item">13</li>
+            <li class="box__item">14</li>
+            <li class="box__item">15</li>
+            <li class="box__item">16</li>
+            <li class="box__item">17</li>
+            <li class="box__item">18</li>
+            <li class="box__item">19</li>
+            <li class="box__item">20</li>
+          </ul>
+        </div>
+
+        <!-- ============ flex-basis ============== -->
+        <div>
+          <h2 class="title">flex-basis</h2>
+          <p>
+            Определяет начальный размер элемента перед распределением свободного
+            пространства. Значение может быть любая валидная величина:
+            <b>px,%,rem,em</b>. Для flex элементов это замена свойства width, но
+            с некоторыми особенностями
+          </p>
+          <br />
+          <p><b>flex-basis: auto | значение</b></p>
+          <ul>
+            <li>
+              Если указаны оба свойства flex-basis и width то свойство width
+              игнорируется
+            </li>
+            <li>
+              Свойство flex-basis это не финальный размер элемента, а размер до
+              распределения своюодного пространства
+            </li>
+            <li>
+              Свойство min-width и max-width работают как граничители размера
+              элемента даже если у него указан flex-basis, а не width
+            </li>
+            <li>
+              Свойство flex-basis может определять высоту, а не ширину элемента.
+              Это происходит в случае, когда главная ось идет вертикально
+            </li>
+          </ul>
+        </div>
+
+        <!-- ============ flex-grow =========== -->
+        <div>
+          <h2 class="title">flex-grow</h2>
+          <p>
+            Определяет способность элемента, по необходимости, зинимать больше
+            места (расти), чем его начальный размер. Значение задается как
+            пропорция (доля) свободного места в контейнере
+          </p>
+          <br />
+          <p><b>flex-grow: доля</b></p>
+          <p>
+            По умолчани. всех элементов установлено значение 0, т.е элементы не
+            пытаются занять доп свободное место, даже если такое есть,
+            отрицательное значение задавать нельзя
+          </p>
+          <img src="./image/flex-grow.svg" class="img" />
+          <p>
+            Например если у всех элементов установлено одинаковое значение этого
+            свойства, то оно займет равное количество места в контейнере. А вот
+            если задать значение 1, второму элементу 2, то они пытаются занять в
+            2 раза больше места чем любой другой элемент
+          </p>
+          <ul class="box__one seven">
+            <li class="box__item">1</li>
+            <li class="box__item">2</li>
+            <li class="box__item">3</li>
+            <li class="box__item">5</li>
+            <li class="box__item">6</li>
+            <li class="box__item">7</li>
+            <li class="box__item">8</li>
+            <li class="box__item">9</li>
+            <li class="box__item">10</li>
+            <li class="box__item">11</li>
+            <li class="box__item">12</li>
+            <li class="box__item">13</li>
+            <li class="box__item">14</li>
+            <li class="box__item">15</li>
+            <li class="box__item">16</li>
+            <li class="box__item boxone">17</li>
+            <li class="box__item boxtwo">18</li>
+            <li class="box__item boxthree">19</li>
+            <li class="box__item boxfour">20</li>
+          </ul>
+        </div>
+
+        <!-- ========== flex-shrink =========== -->
+        <div>
+          <h2 class="title">flex-shrink</h2>
+          <p>
+            Определяет способность элемента по необходимости занимать меньше
+            места (сжиматься) чем его начальный размер. Значение задается как
+            доля
+
+            <b>flex-shrink: доля</b>
+            <br />
+            <br />
+            По умолчанию у всех элементов установлено значение 1, т.е элементы
+            будут сжиматься только при необходимости,
+            <b>отрицательное значение задавать нельзя</b>.
+          </p>
+        </div>
+
+        <!-- ============ align-self ============= -->
+        <div>
+          <h2 class="title">align-self</h2>
+          <p>
+            Позволяет элементу изменить свое положение на поперечной оси,
+            переопределив для себя значение align-items от контейнера.
+            <br />
+            Аналога для главной оси не существует. Элемент может сместить себя
+            только на поперечной оси.
+            <br />
+            <b
+              >align-self: auto | flex-start | flex-end | center | baseline |
+              stretch</b
+            >
+          </p>
+          <img src="./image/align-self.svg" class="img" />
+          <ul class="box__one eight">
+            <li class="box__item">1</li>
+            <li class="box__item">2</li>
+            <li class="box__item">3</li>
+            <li class="box__item selfone">5</li>
+            <li class="box__item">6</li>
+            <li class="box__item">7</li>
+            <li class="box__item">8</li>
+            <li class="box__item">9</li>
+            <li class="box__item">10</li>
+            <li class="box__item">11</li>
+            <li class="box__item">12</li>
+            <li class="box__item">13</li>
+            <li class="box__item">14</li>
+            <li class="box__item">15</li>
+          </ul>
+        </div>
+
+        <!-- ============= button =============== -->
+        <div class="button">
+          <span class="icon"></span>
+          <a class="button__link" href="#">link link</a>
+        </div>
+        <!-- =========== position =========== -->
+        <div>
+          <h2 class="title">position</h2>
+          <p>
+            Свойство <b>position</b> указывает тип метода позиционирования,
+            используемого для элемента
+          </p>
+          <ul>
+            <p>Существует 5 значений позиций</p>
+            <li>
+              <b>absolute (абсолютная)</b> - єлемент будет позиционироваться
+              абсолютно. Регулируется такими свойствами как:
+              <b>top, right, bottom, left</b>
+            </li>
+            <li>
+              <b>fixed (фиксированая)</b> - регулируется такими свойствами как:
+              <b>top, right, bottom, left</b>. Не меняет свое положение при
+              прокрутке страницы
+            </li>
+            <li>
+              <b>relative (относительная)</b> - относительное позиционирование,
+              положение элемента позиционируется относительно его исходного
+              места, регулируется такими свойствами как:
+              <b>top, right, bottom, left</b>
+            </li>
+            <li>
+              <b>static (статическое)</b> - элементы отображаются как обычно, не
+              регулирется своййствами <b>top, right, bottom, left</b>
+            </li>
+            <li>
+              <b>sticky (липкая)</b> - читание относительного и фиксированого
+              похиционирования
+            </li>
+          </ul>
+          <div class="position">
+            <div class="box absolute">absolute</div>
+            <div class="box fixed">fixed</div>
+            <div class="box relative">relative</div>
+            <div class="box static">static</div>
+            <div class="box sticky">sticky</div>
+          </div>
+        </div>
+        <!-- ============ flex practic=========== -->
+        <ul class="news__ul">
+          <li class="news__li">
+            <p class="news__p"><b>Lorem ipsum dolor sit.</b></p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              voluptate et rerum eaque quis ratione magnam? Tempore veniam id
+              et!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deleniti voluptate et rerum eaque quis ratione magnam? Tempore
+              veniam id et!
+            </p>
+          </li>
+          <li class="news__li">
+            <p class="news__p"><b>Lorem ipsum dolor sit.</b></p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              voluptate et rerum eaque quis ratione magnam? Tempore veniam id
+              et!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deleniti voluptate et rerum eaque quis ratione magnam? Tempore
+              veniam id et!
+            </p>
+          </li>
+          <li class="news__li">
+            <p class="news__p"><b>Lorem ipsum dolor sit.</b></p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              voluptate et rerum eaque quis ratione magnam? Tempore veniam id
+              et!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deleniti voluptate et rerum eaque quis ratione magnam? Tempore
+              veniam id et!
+            </p>
+          </li>
+          <li class="news__li">
+            <p class="news__p"><b>Lorem ipsum dolor sit.</b></p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              voluptate et rerum eaque quis ratione magnam? Tempore veniam id
+              et!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deleniti voluptate et rerum eaque quis ratione magnam? Tempore
+              veniam id et!
+            </p>
+          </li>
+          <li class="news__li">
+            <p class="news__p"><b>Lorem ipsum dolor sit.</b></p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              voluptate et rerum eaque quis ratione magnam? Tempore veniam id
+              et!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deleniti voluptate et rerum eaque quis ratione magnam? Tempore
+              veniam id et!
+            </p>
+          </li>
+          <li class="news__li">
+            <p class="news__p"><b>Lorem ipsum dolor sit.</b></p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              voluptate et rerum eaque quis ratione magnam? Tempore veniam id
+              et!Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Deleniti voluptate et rerum eaque quis ratione magnam? Tempore
+              veniam id et!
+            </p>
+          </li>
+        </ul>
       </div>
     </header>
   </body>

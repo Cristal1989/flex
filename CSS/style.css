@@ -97,7 +97,6 @@ a {
 }
 
 .two {
-  /* justify-content: space-around; */
   align-items: stretch;
   height: 220px;
 }
@@ -119,4 +118,139 @@ a {
   height: 200px;
   gap: 10px;
   flex-wrap: wrap;
+}
+
+.six {
+  height: 400px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  align-content: center;
+}
+
+.seven {
+  height: 300px;
+  flex-wrap: wrap;
+}
+
+.boxone {
+  flex-grow: 2;
+}
+
+.boxtwo {
+  flex-grow: 4;
+}
+
+.boxthree {
+  flex-grow: 3;
+}
+
+.boxfour {
+  flex-grow: 2;
+}
+
+.eight {
+  height: 300px;
+}
+
+.selfone {
+  align-self: flex-end;
+}
+
+/* ======= button ====== */
+
+.button {
+  text-align: center;
+  border-radius: 8px;
+  /* padding: 20px; */
+  margin-top: 10px;
+  width: 150px;
+  height: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 6px;
+  height: 20px;
+  width: 12px;
+  background-color: tomato;
+  border-radius: 2px;
+}
+
+.button__link {
+  vertical-align: top;
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========== position ===== */
+/* .position {
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 8px;
+  position: relative;
+} */
+
+
+/* relative - необходимо указать родителькому блоку, чтобы объекты позиционировались относительно род блока, без указания свойства relative будет поционироваться относительно тега body  */
+
+/* z-index - определяет высоту стака (приоритет) элементов  */
+/* .box {
+  color: white;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 8px;
+  background-color: gray;
+}
+
+.absolute {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  border: 3px solid #e75613;
+  z-index: 1;
+}
+
+.fixed {
+  position: fixed;
+  border: 3px solid #2714ca7a;
+  bottom: 10px;
+  z-index: 5;
+}
+
+.static {
+  position: static;
+  left: 50px;
+}
+
+.sticky {
+  border: 3px solid #0abeeb;
+  position: sticky;
+  width: 50%;
+  float: right;
+  top: 10px;
+} */
+
+.news__ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.news__li {
+  width: calc((100% - 20px) / 3);
+  margin: 0 10px 20px 0;
+}
+
+.news__li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.news__p {
+  margin-bottom: 10px;
 }
